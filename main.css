@@ -3,6 +3,21 @@ html, body {
 	padding: 0;
 }
 
+h1, h2, button {
+	font-family: sans-serif;
+}
+
+h1 {
+	margin: 10px 0px 0px;
+	color: #666;
+}
+
+h2 {
+	margin: 5px 0px 0px;
+	font-size: 14px;
+	color: #aaa;
+}
+
 .contain_buttons {
 	width: 100%;
 	max-width: 960px;
@@ -11,8 +26,11 @@ html, body {
 }
 
 button {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
-	font-family: sans-serif;
+
 	border: none;
 	margin-top: 20px;
 	padding: 10px 20px;
@@ -26,4 +44,11 @@ button {
 button:hover {
 	background-color: #eee;
 	color: #aaa;
+}
+
+.contain_divs {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	background-color: #eee;
 }
