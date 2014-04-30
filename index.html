@@ -4,17 +4,17 @@
 	<title>Sketch</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="sketch.js"></script>
 </head>
 <body>
 	<div class="contain_buttons">
 		<h1>Sketch</h1>
 		<h2>Select a tool. Input a grid size. Hover to draw.</h2>
-		<button type="button" id="tool_1">Solid</button>
-		<button type="button" id="tool_2">Rainbow</button>
-		<button type="button" id="tool_3">Special</button>
+		<button type="button" id="tool_1" onclick="solidDraw(); return false;">Solid</button>
+		<button type="button" id="tool_2" onclick="rainbowDraw(); return false;">Rainbow</button>
+		<button type="button" id="tool_3" onclick="clearBoard(size); return false;">Special</button>
 	</div>
 	<div class="contain_divs">
 	</div>
+	<script src="sketch.js"></script>
 </body>
 </html>

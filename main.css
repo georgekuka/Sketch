@@ -49,6 +49,12 @@ button:hover {
 .contain_divs {
 	width: 100%;
 	max-width: 960px;
-	margin: 0 auto;
+	margin: 20px auto;
 	background-color: #eee;
+}
+
+.block {
+	background-color: #aaa;
+	float: left;
+	margin: 1px;
 }
