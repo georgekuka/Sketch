@@ -1,7 +1,4 @@
-$container = $('.contain_divs');
-$solid = $('#tool_1');
-$rainbow = $('#tool_2');
-$special = $('#tool_3');
+// Variables created to store the last created grid size and tool.
 var activeTool = 0;
 var size = 0;
 
@@ -17,8 +14,8 @@ function createBoard(clearNum) {
 		// This else is trigger is an argument was present and will set the gridsize to the argument, skipping the
 		// prompt.
 		else { size = clearNum; }
-	// Check if grid is between 1 and 128, if not prompt for another number.
-	while (size < 1 || size > 128) {
+	// Check if grid is between 1 - 128 and is not a number (NaN), if any of the three fail prompt for another number.
+	while (size < 1 || size > 128 || isNaN(size)) {
 		temp = prompt("Please enter only a number between 1 and 128.");
 		size = parseInt(temp);
 	};
@@ -38,7 +35,7 @@ function createBoard(clearNum) {
 		case 1:
 			// Turn div solid red.
 			$('.block').mouseenter(function() {
-				$(this).css('background-color', 'red');
+				$(this).css('background-color', '#e74c3c');
 			}); break;
 		case 2:
 			// Turn div a random RGB value.
