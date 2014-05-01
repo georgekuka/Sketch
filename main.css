@@ -54,6 +54,7 @@ button:hover {
 }
 
 .block {
+	transition: all 0.3s ease-in-out;
 	background-color: #aaa;
 	float: left;
 	margin: 1px;
