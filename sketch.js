@@ -14,10 +14,9 @@ function createBoard(clearNum) {
 		if (typeof clearNum === "undefined") { 
 	temp = prompt("Please enter a grid size, 1 - 128.");
 	size = parseInt(temp); } 
-		else {
-		// This else is trigger is an argument was present and will set the gridsize to the argument.
-		size = clearNum;
-	}
+		// This else is trigger is an argument was present and will set the gridsize to the argument, skipping the
+		// prompt.
+		else { size = clearNum; }
 	// Check if grid is between 1 and 128, if not prompt for another number.
 	while (size < 1 || size > 128) {
 		temp = prompt("Please enter only a number between 1 and 128.");
@@ -31,14 +30,18 @@ function createBoard(clearNum) {
 	for (i = (size * size); i > 0; i--) {
 		$("<div class='block' style='width: " + width + "px; height: " + height + "px;'>").appendTo('.contain_divs');
 	};
+	// This switch is to check which is the active tool (set when call one of the three tool functions below.)
+	// Case 1, 2, 3 each contain a different div altering function.
 	switch (activeTool) {
 		case 0:
 			break;
 		case 1:
+			// Turn div solid red.
 			$('.block').mouseenter(function() {
 				$(this).css('background-color', 'red');
 			}); break;
 		case 2:
+			// Turn div a random RGB value.
 			$('.block').mouseenter(function() {
 				$(this).css('background-color', 'rgb('
 												+ (Math.floor(Math.random() * 256)) + ','
@@ -46,12 +49,13 @@ function createBoard(clearNum) {
 												+ (Math.floor(Math.random() * 256)) + ')');
 			}); break;
 		case 3:
+			// Lower opacity by 0.2 on each pass.
 			$('.block').mouseenter(function() {
-				$(this).css('background-color', 'red');
+				$(this).css('opacity', '-=0.20');
 			}); break;
 		default:
 			break;	 	
-	}
+	};
 };
 
 function solidDraw() {

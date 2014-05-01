@@ -58,4 +58,5 @@ button:hover {
 	background-color: #aaa;
 	float: left;
 	margin: 1px;
+	opacity: 1;
 }
